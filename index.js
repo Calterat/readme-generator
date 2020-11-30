@@ -1,4 +1,6 @@
-const { readmeQuestions } = require('./src/readmeQuestions.js');
+const { readmeQuestions } = require('./src/readmeQuestions');
+const readmeGenerator = require('./src/readmeGenerator');
 
 readmeQuestions()
-    .then(answers => console.log(answers));
+    .then(answers => readmeGenerator(answers))
+    .then(md => console.log(md));
