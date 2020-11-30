@@ -24,6 +24,12 @@ const readmeQuestions = () => {
         },
         {
             type: 'checkbox',
+            name: 'languages',
+            message: 'What Languages are used for this project?',
+            choices: [ 'HTML', 'CSS', 'JavaScript', 'node.js', 'Markdown', 'C+', 'GO']
+        },
+        {
+            type: 'list',
             name: 'license',
             message: 'What license are you using for this project?',
             choices: ['a','b','c','d','e','f','g','h','i','j','k']

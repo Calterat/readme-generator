@@ -1,4 +1,4 @@
-const { readmeQuestions } = require('./readmeQuestions.js');
+const { readmeQuestions } = require('./src/readmeQuestions.js');
 
 readmeQuestions()
-    .then()
+    .then(answers => console.log(answers));
