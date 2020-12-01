@@ -9,6 +9,17 @@ const readmeQuestions = () => {
         },
         {
             type: 'input',
+            name: 'email',
+            message: 'What is your E-mail Address?',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('You must provide your E-mail address!')
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'github',
             message: 'What is your GitHub username?',
             validate: input => {
