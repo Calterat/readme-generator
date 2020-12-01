@@ -1,4 +1,4 @@
-const testingSection = (test) => {
+const testingSection = test => {
     if (test) {
 return `
 ## Tests
@@ -8,14 +8,14 @@ ${test}
     }
 }
 
-const testingTOB = (test) => {
+const testingTOC = test => {
     if (test) {
         return `
 * [Tests](#tests)`;
     } else return ``;
 }
 
-const siteURL = (url) => {
+const siteURL = url => {
      if (url) {
          return `
          Here is the link to the site URL: ${url}
@@ -31,7 +31,7 @@ const nameSentence = name => {
     } else return ``;
 }
 
-const licenseYesNo = (license) => {
+const licenseYesNo = license => {
     if (license === 'None' || license === 'The Unlicense') return 'critical';
     else return 'success';
 }
@@ -53,11 +53,28 @@ const usageAdd = (addOn, screenshotPath, videoLink) => {
     
 }
 
+const commentsTOC = comments => {
+    if (comments) {
+        return `
+* [Comments](#comments)`;
+    } else return ``;
+}
+
+const commentSection = comments => {
+    if (comments) {
+return `
+## Comments
+
+${comments}
+`
+    }
+}
+
 module.exports = answers => {
 
 const { name, email, github, repoName, title, description, languages, 
     license, installation, usageContent, usageAddOn, screenshotPath, videoLink, 
-    tests, git, repoSiteURL, contribute } = answers;
+    tests, git, repoSiteURL, contribute, comments } = answers;
 
 return `
 [![GitHub license](https://img.shields.io/badge/License-${license.replace(/ /g, '%20')}-${licenseYesNo(license)}.svg)](https://${git}.com/${github}/${repoName}/main/LICENSE)
@@ -77,9 +94,9 @@ ${description}
 * [Languages](#languages)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Contributing](#contributing)${testingTOB(tests)}
+* [Contributing](#contributing)${testingTOC(tests)}
 * [License](#license)
-* [Questions](#questions)
+* [Questions](#questions)${commentsTOC(comments)}
 
 
 ## Language(s)
@@ -113,12 +130,15 @@ ${testingSection(tests)}
 This project is covered under the license of [${license}](https://${git}.com/${github}/${repoName}/main/LICENSE)
 
 
-## Repository
+## Questions
 
 You can find my repository URL [Here](https://${git}.com/${github})
 
 ${siteURL(repoSiteURL)}
 
 If you have additional questions, you may reach me at my E-mail Address: ${email}
+
+
+${commentSection(comments)}
 `
 }

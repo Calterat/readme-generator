@@ -1,16 +1,14 @@
 
-[![GitHub license](https://img.shields.io/badge/License-None-critical.svg)](https://GitHub.com/asdf/asdf/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-BSD%203-Clause%20"New"%20or%20"Revised"%20License-success.svg)](https://GitHub.com/Calterat/readme-generator/main/LICENSE)
 
-# asdf
+# README Generator
 
-Welcome to my asdf node app.
+My name is Julian Gillis.Welcome to my README Generator node app.
 
 
 ## Description
 
-My name is asdf..
-
-asdf
+generates a readme.md
 
 
 ## Table of Contents
@@ -19,49 +17,45 @@ asdf
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
+
 
 ## Language(s)
 
 Language(s) used in this project:
-HTML,CSS,JavaScript,Markdown,C+,GO,Python
+HTML,CSS,JavaScript,Markdown
 
 
 ## Installation
 
-asdf
+npm install
 
 
 ## Usage
 
-Check out this [Video](https://instructions.com) to learn how to use this app.
+You use it by pushing it up the butt.
+
+[Here is a HowTo Video Link!](video.com)
 
 
 ## Contributing
 
-asdf    
+do stuff    
 
 
-
-## Tests
-
-asdf
-
+undefined
 
 
 ## License
 
-This project is covered under the license of [None](https://GitHub.com/asdf/asdf/main/LICENSE)
+This project is covered under the license of [BSD 3-Clause "New" or "Revised" License](https://GitHub.com/Calterat/readme-generator/main/LICENSE)
 
 
 ## Repository
 
-You can find my repository URL [Here](https://GitHub.com/asdf)
+You can find my repository URL [Here](https://GitHub.com/Calterat)
 
 
-         Here is the link to the site URL: asdf
-         
 
-If you have additional questions, you may reach me at my E-mail Address: asdf
+If you have additional questions, you may reach me at my E-mail Address: calterat@gmail.com
