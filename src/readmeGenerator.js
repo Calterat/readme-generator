@@ -9,7 +9,10 @@ ${test}
 }
 
 const testingTOB = (test) => {
-    if (test) return `* [Tests](#tests)`
+    if (test) {
+        return `
+* [Tests](#tests)`;
+    } else return ``;
 }
 
 const siteURL = (url) => {
@@ -29,22 +32,42 @@ const nameSentence = name => {
 }
 
 const licenseYesNo = (license) => {
-    if (license !== 'None' || license !== 'The Unlicense') return 'red';
-    else return 'green';
+    if (license === 'None' || license === 'The Unlicense') return 'critical';
+    else return 'success';
+}
+
+const usageAdd = (addOn, screenshotPath, videoLink) => {
+    switch (addOn) {
+        case 'None':
+            return ``;
+            break;
+        case 'Screenshot':
+            return `![Screenshot](${screenshotPath})`
+            break;
+        case 'Video':
+            return `[Here is a HowTo Video Link!](${videoLink})`
+            break;
+        default:
+            return `Error in the Switch!`;
+    }
+    
 }
 
 module.exports = answers => {
 
-const { name, email, github, title, description, languages, license, installCommand, testCommand, git, repoSiteURL, contribute } = answers;
+const { name, email, github, repoName, title, description, languages, 
+    license, installation, usageContent, usageAddOn, screenshotPath, videoLink, 
+    tests, git, repoSiteURL, contribute } = answers;
 
 return `
-[![GitHub license](https://img.shields.io/badge/license-${license}-${licenseYesNo(license)}.svg)](https://${git}.com/${github})
+[![GitHub license](https://img.shields.io/badge/License-${license.replace(/ /g, '%20')}-${licenseYesNo(license)}.svg)](https://${git}.com/${github}/${repoName}/main/LICENSE)
 
 # ${title}
 
-## Description
+${nameSentence(name)}Welcome to my ${title} node app.
 
-${nameSentence(name)}. Welcome to my ${title} node app.
+
+## Description
 
 ${description}
 
@@ -54,10 +77,10 @@ ${description}
 * [Languages](#languages)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Contributing](#contributing)
-${testingTOB(testCommand)}
+* [Contributing](#contributing)${testingTOB(tests)}
 * [License](#license)
 * [Questions](#questions)
+
 
 ## Language(s)
 
@@ -67,12 +90,14 @@ ${languages}
 
 ## Installation
 
-${installCommand}
+${installation}
 
 
 ## Usage
 
-Check out this [Video](https://instructions.com) to learn how to use this app.
+${usageContent}
+
+${usageAdd(usageAddOn, screenshotPath, videoLink)}
 
 
 ## Contributing
@@ -80,12 +105,12 @@ Check out this [Video](https://instructions.com) to learn how to use this app.
 ${contribute}    
 
 
-${testingSection(testCommand)}
+${testingSection(tests)}
 
 
 ## License
 
-This project is covered under the license of ${license}
+This project is covered under the license of [${license}](https://${git}.com/${github}/${repoName}/main/LICENSE)
 
 
 ## Repository
@@ -96,5 +121,4 @@ ${siteURL(repoSiteURL)}
 
 If you have additional questions, you may reach me at my E-mail Address: ${email}
 `
-
 }

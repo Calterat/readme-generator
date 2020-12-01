@@ -32,6 +32,18 @@ const readmeQuestions = () => {
         },
         {
             type: 'input',
+            name: 'repoName',
+            message: 'What is your repo name?',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Please enter your repo name! This is needed for links generated in the README');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'title',
             message: 'What is the name of your project?',
             validate: input => {
@@ -71,7 +83,7 @@ const readmeQuestions = () => {
         },
         {
             type: 'input',
-            name: 'installCommand',
+            name: 'installation',
             message: 'What are the steps required to install your project?',
             validate: input => {
                 if (input) return true;
@@ -83,8 +95,44 @@ const readmeQuestions = () => {
         },
         {
             type: 'input',
-            name: 'testCommand',
-            message: 'What command is needed to run tests on the project?'
+            name: 'usageContent',
+            message: 'Describe how you use this project.',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Please tell your users how you can use this project.');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'list',
+            name: 'usageAddOn',
+            message: 'Do you have a video link or screenshot link to add to to your README?',
+            choices: ['None', 'Screenshot', 'Video']
+        },
+        {
+            type: 'input',
+            name: 'screenshotPath',
+            message: 'What is the relative path of the screenshot image to where this README will sit?',
+            when: ({usageAddOn}) => {
+                if (usageAddOn === 'Screenshot') return true;
+                else return false;
+            }
+        },
+        {
+            type: 'input',
+            name: 'videoLink',
+            message: 'What is the URL of the video link?',
+            when: ({usageAddOn}) => {
+                if (usageAddOn === 'Video') return true;
+                else return false;
+            }
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'What is needed to run tests on the project?'
         },
         {
             type: 'list',
