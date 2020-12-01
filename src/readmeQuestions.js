@@ -83,18 +83,6 @@ const readmeQuestions = () => {
         },
         {
             type: 'input',
-            name: 'repoURL',
-            message: 'What is the URL for your repository?',
-            validate: input => {
-                if (input) return true;
-                else {
-                    console.log('Give your Repository URL.. You have one right?');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
             name: 'repoSiteURL',
             message: 'If there is a webURL for this enter here, or else just hit enter'
         },

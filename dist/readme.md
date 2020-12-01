@@ -3,25 +3,25 @@
 
 ## Description
 
-Welcome to my README Gen node app. My name is Julian Gillis..
+My name is Julian Gillis.. Welcome to my README Gen node app.
 
-something something
+gen README
 
 
 ## Table of Contents
 
 * [Languages](#languages)
-* [License](#license)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Tesing](#testing)
 * [Repository](#repository)
 * [Contributing](#contributing)
+* [Testing](#testing)
+* [License](#license)
 
 
-## Languages
+## Language(s)
 
-Languages used in this project:
+Language(s) used in this project:
 HTML,CSS,JavaScript,Markdown
 
 
@@ -32,27 +32,27 @@ npm install
 
 ## Usage
 
-Check out this [Video](https://instructions.com)
-
-
-
-        ## Testing
-
-        npm test
-        
+Check out this [Video](https://instructions.com) to learn how to use this app.
 
 
 ## Repository
 
-You can find my repo username as Calterat.
+You can find my repository URL [Here](https://GitHub.com/Calterat)
 
-github.com/Calterat
 
 
 
 ## Contributing
 
-clone, branch, merge    
+clone, branch, request merge    
+
+
+
+## Testing
+
+npm test
+
+
 
 ## License
 

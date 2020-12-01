@@ -31,7 +31,7 @@ const nameSentence = name => {
 
 module.exports = answers => {
 
-const { name, github, title, description, languages, license, installCommand, testCommand, git, repoURL, repoSiteURL, contribute } = answers;
+const { name, github, title, description, languages, license, installCommand, testCommand, git, repoSiteURL, contribute } = answers;
 
 return `
 # ${title}
