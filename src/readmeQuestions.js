@@ -76,6 +76,12 @@ const readmeQuestions = () => {
             message: 'What command is needed to run tests on the project?'
         },
         {
+            type: 'list',
+            name: 'git',
+            message: 'Are you using GitLab or GitHub?',
+            choices: ['GitLab','GitHub']
+        },
+        {
             type: 'input',
             name: 'repoURL',
             message: 'What is the URL for your repository?',

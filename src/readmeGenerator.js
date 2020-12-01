@@ -1,17 +1,21 @@
 const testingSection = (test) => {
     if (test) {
-        return `
-        ## Testing
+return `
+## Testing
 
-        ${test}
-        `
+${test}
+`
     }
 }
 
-const repoSiteURL = (url) => {
+const testingTOB = (test) => {
+    if (test) return `* [Testing](#testing)`
+}
+
+const siteURL = (url) => {
      if (url) {
          return `
-         ${url}
+         Here is the link to the site URL: ${url}
          `
      } else {
          return ``
@@ -27,14 +31,14 @@ const nameSentence = name => {
 
 module.exports = answers => {
 
-const { name, github, title, description, languages, license, installCommand, testCommand, repoURL, repoSiteURL, contribute } = answers;
+const { name, github, title, description, languages, license, installCommand, testCommand, git, repoURL, repoSiteURL, contribute } = answers;
 
 return `
 # ${title}
 
 ## Description
 
-Welcome to my ${title} node app. ${nameSentence(name)}.
+${nameSentence(name)}. Welcome to my ${title} node app.
 
 ${description}
 
@@ -42,17 +46,17 @@ ${description}
 ## Table of Contents
 
 * [Languages](#languages)
-* [License](#license)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Tesing](#testing)
 * [Repository](#repository)
 * [Contributing](#contributing)
+${testingTOB(testCommand)}
+* [License](#license)
 
 
-## Languages
+## Language(s)
 
-Languages used in this project:
+Language(s) used in this project:
 ${languages}
 
 
@@ -63,23 +67,23 @@ ${installCommand}
 
 ## Usage
 
-Check out this [Video](https://instructions.com)
-
-
-${testingSection(testCommand)}
+Check out this [Video](https://instructions.com) to learn how to use this app.
 
 
 ## Repository
 
-You can find my repo username as ${github}.
+You can find my repository URL [Here](https://${git}.com/${github})
 
-${repoURL}
-${repoSiteURL(repoSiteURL)}
+${siteURL(repoSiteURL)}
 
 
 ## Contributing
 
 ${contribute}    
+
+
+${testingSection(testCommand)}
+
 
 ## License
 

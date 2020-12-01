@@ -1,11 +1,11 @@
 
-# asdf
+# README Gen
 
 ## Description
 
-Welcome to my asdf node app. My name is asdf and my GitHub Username is asdf.
+Welcome to my README Gen node app. My name is Julian Gillis..
 
-asdf
+something something
 
 
 ## Table of Contents
@@ -22,31 +22,38 @@ asdf
 ## Languages
 
 Languages used in this project:
-HTML,CSS,JavaScript,node.js,Markdown,C+,GO
+HTML,CSS,JavaScript,Markdown
 
 
 ## Installation
 
-asdf
+npm install
 
 
 ## Usage
 
+Check out this [Video](https://instructions.com)
 
-## Testing
 
-asdf
+
+        ## Testing
+
+        npm test
+        
 
 
 ## Repository
 
-asdf
+You can find my repo username as Calterat.
+
+github.com/Calterat
+
 
 
 ## Contributing
 
-asdf    
+clone, branch, merge    
 
 ## License
 
-a
+MIT License
