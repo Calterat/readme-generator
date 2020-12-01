@@ -10,23 +10,44 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'github',
-            message: 'What is your GitHub username?'
+            message: 'What is your GitHub username?',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Please enter your GitHub username! This is for your GitHub links');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your project?'
+            message: 'What is the name of your project?',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Please input the title of your project! Come on... It must be called something!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'description',
-            message: 'What is the description of your project?'
+            message: 'What is the description of your project?',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Please add a description! It is rude not to tell viewers what they would be looking at.');
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
             name: 'languages',
             message: 'What Languages are used for this project?',
-            choices: [ 'HTML', 'CSS', 'JavaScript', 'node.js', 'Markdown', 'C+', 'GO']
+            choices: [ 'HTML', 'CSS', 'JavaScript', 'Markdown', 'C+', 'GO', 'Python' ]
         },
         {
             type: 'list',
@@ -40,7 +61,14 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'installCommand',
-            message: 'What are the steps required to install your project?'
+            message: 'What are the steps required to install your project?',
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('What are the installation proceedures? Do you want anyone to be able to check out your project?');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
@@ -49,12 +77,24 @@ const readmeQuestions = () => {
         },
         {
             type: 'input',
-            name: 'userRepo',
-            message: 'What does the user need to know about using the repository?'
+            name: 'repoURL',
+            message: 'What is the URL for your repository?'
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Give your Repository URL.. You have one right?');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
-            name: 'userContribute',
+            name: 'repoSiteURL',
+            message: 'If there is a webURL for this enter here, or else just hit enter'
+        },
+        {
+            type: 'input',
+            name: 'contribute',
             message: 'What does the user need to know about contributing to the repository?'
         }
     ])

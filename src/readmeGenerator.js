@@ -1,16 +1,40 @@
-const usageTOB = () => `* [Usage](#usage)`;
-const usageContent = () => `## Usage`;
+const testingSection = (test) => {
+    if (test) {
+        return `
+        ## Testing
+
+        ${test}
+        `
+    }
+}
+
+const repoSiteURL = (url) => {
+     if (url) {
+         return `
+         ${url}
+         `
+     } else {
+         return ``
+     }
+}
+
+const nameSentence = name => {
+    if (name) {
+        return `My name is ${name}.`;
+    } else return ``;
+}
+
 
 module.exports = answers => {
 
-const { name, github, title, description, languages, license, installCommand, testCommand, userRepo, userContribute } = answers;
+const { name, github, title, description, languages, license, installCommand, testCommand, repoURL, repoSiteURL, contribute } = answers;
 
 return `
 # ${title}
 
 ## Description
 
-Welcome to my ${title} node app. My name is ${name} and my GitHub Username is ${github}.
+Welcome to my ${title} node app. ${nameSentence(name)}.
 
 ${description}
 
@@ -20,7 +44,7 @@ ${description}
 * [Languages](#languages)
 * [License](#license)
 * [Installation](#installation)
-${usageTOB()}
+* [Usage](#usage)
 * [Tesing](#testing)
 * [Repository](#repository)
 * [Contributing](#contributing)
@@ -37,22 +61,25 @@ ${languages}
 ${installCommand}
 
 
-${usageContent()}
+## Usage
+
+Check out this [Video](https://instructions.com)
 
 
-## Testing
-
-${testCommand}
+${testingSection(testCommand)}
 
 
 ## Repository
 
-${userRepo}
+You can find my repo username as ${github}.
+
+${repoURL}
+${repoSiteURL(repoSiteURL)}
 
 
 ## Contributing
 
-${userContribute}    
+${contribute}    
 
 ## License
 
