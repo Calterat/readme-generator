@@ -81,7 +81,7 @@ return `
 
 # ${title}
 
-${nameSentence(name)}Welcome to my ${title} node app.
+${nameSentence(name)} Welcome to my ${title} node app.
 
 
 ## Description

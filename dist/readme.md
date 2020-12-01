@@ -1,5 +1,5 @@
 
-[![GitHub license](https://img.shields.io/badge/License-BSD%203-Clause%20"New"%20or%20"Revised"%20License-success.svg)](https://GitHub.com/Calterat/readme-generator/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/License-GNU%20General%20Public%20License%20v3.0-success.svg)](https://GitHub.com/Calterat/readme-generator/main/LICENSE)
 
 # README Generator
 
@@ -8,7 +8,7 @@ My name is Julian Gillis.Welcome to my README Generator node app.
 
 ## Description
 
-generates a readme.md
+gen readmes
 
 
 ## Table of Contents
@@ -17,14 +17,16 @@ generates a readme.md
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
+* [Tests](#tests)
 * [License](#license)
 * [Questions](#questions)
+* [Comments](#comments)
 
 
 ## Language(s)
 
 Language(s) used in this project:
-HTML,CSS,JavaScript,Markdown
+HTML
 
 
 ## Installation
@@ -34,9 +36,9 @@ npm install
 
 ## Usage
 
-You use it by pushing it up the butt.
+with tact
 
-[Here is a HowTo Video Link!](video.com)
+![Screenshot](./help.png)
 
 
 ## Contributing
@@ -44,18 +46,29 @@ You use it by pushing it up the butt.
 do stuff    
 
 
-undefined
+
+## Tests
+
+npm test
+
 
 
 ## License
 
-This project is covered under the license of [BSD 3-Clause "New" or "Revised" License](https://GitHub.com/Calterat/readme-generator/main/LICENSE)
+This project is covered under the license of [GNU General Public License v3.0](https://GitHub.com/Calterat/readme-generator/main/LICENSE)
 
 
-## Repository
+## Questions
 
 You can find my repository URL [Here](https://GitHub.com/Calterat)
 
 
 
 If you have additional questions, you may reach me at my E-mail Address: calterat@gmail.com
+
+
+
+## Comments
+
+This readme is made with the readme generator!
+
