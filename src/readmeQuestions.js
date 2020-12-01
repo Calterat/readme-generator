@@ -78,7 +78,7 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'repoURL',
-            message: 'What is the URL for your repository?'
+            message: 'What is the URL for your repository?',
             validate: input => {
                 if (input) return true;
                 else {
