@@ -33,7 +33,7 @@ const readmeQuestions = () => {
                                     result(true);
                                     return;
                                 } else {                                   
-                                    result(' - Wrong! Try again, because this username does not checkout!');
+                                    result(' - Wrong! Try again, because this username does not checkout! Backspace this trash out and retype.');
                                     return;
                                 }
                             })
