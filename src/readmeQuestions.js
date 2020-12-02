@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fetch = require('node-fetch');
 
 const readmeQuestions = () => {
     return inquirer.prompt([
@@ -22,12 +23,26 @@ const readmeQuestions = () => {
             type: 'input',
             name: 'github',
             message: 'What is your GitHub username?',
-            validate: input => {
-                if (input) return true;
-                else {
-                    console.log('Please enter your GitHub username! This is for your GitHub links');
-                    return false;
+            validate: function(input) {
+
+                const validateUser = (user, result) => {
+                    return new Promise(() => {
+                        fetch(`https://api.github.com/users/${user}`)
+                            .then(response => {
+                                if (response.ok) {
+                                    result(true);
+                                    return;
+                                } else {                                   
+                                    result(' - Wrong! Try again, because this username does not checkout!');
+                                    return;
+                                }
+                            })
+                    })
                 }
+
+                const result = this.async();
+
+                validateUser(input, result);
             }
         },
         {
