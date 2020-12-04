@@ -107,14 +107,14 @@ ${languages}
 
 ## Installation
 
-${installation}
+> ${installation}
 
 
 ## Usage
 
 ${usageContent}
 
-${usageAdd(usageAddOn, screenshotPath, videoLink)}
+> ${usageAdd(usageAddOn, screenshotPath, videoLink)}
 
 
 ## Contributing
