@@ -1,6 +1,9 @@
+// imports inquirer module
 const inquirer = require('inquirer');
+// imports window.fetch
 const fetch = require('node-fetch');
 
+// the inquirer object of questions and answers
 const readmeQuestions = () => {
     return inquirer.prompt([
         {
@@ -22,7 +25,7 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'github',
-            message: 'What is your GitHub username?',
+            message: 'What is your GitHub username (Hint: must be a valid github username)?',
             validate: function(input) {
 
                 const validateUser = (user, result) => {
@@ -158,7 +161,7 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'repoSiteURL',
-            message: 'If there is a webURL for this enter here, or else just hit enter'
+            message: 'If there is a webURL for this enter here, or else just hit ENTER'
         },
         {
             type: 'input',
@@ -168,7 +171,7 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'comments',
-            message: 'Do you have any additional comments?'
+            message: 'If you have any additional comments write them here, or just hit ENTER'
         }
     ])
 }

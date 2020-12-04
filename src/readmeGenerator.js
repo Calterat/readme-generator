@@ -1,3 +1,4 @@
+// This adds a Test header if the user inputs a test section
 const testingSection = test => {
     if (test) {
 return `
@@ -8,6 +9,7 @@ ${test}
     }
 }
 
+// This add the Test TOC item if the user inputs a test section
 const testingTOC = test => {
     if (test) {
         return `
@@ -15,6 +17,7 @@ const testingTOC = test => {
     } else return ``;
 }
 
+// Adds the users email to the README
 const siteURL = url => {
      if (url) {
          return `
@@ -25,17 +28,20 @@ const siteURL = url => {
      }
 }
 
+// If the user supplied their name it is placed near the top of the README
 const nameSentence = name => {
     if (name) {
         return `My name is ${name}.`;
     } else return ``;
 }
 
+// Checks if user selects a license for their project.
 const licenseYesNo = license => {
     if (license === 'None' || license === 'The Unlicense') return 'critical';
     else return 'success';
 }
 
+// checks what type of usage addon the user selects and puts it in the README
 const usageAdd = (addOn, screenshotPath, videoLink) => {
     switch (addOn) {
         case 'None':
@@ -53,6 +59,7 @@ const usageAdd = (addOn, screenshotPath, videoLink) => {
     
 }
 
+// adds a comment TOC if the user inputs anything
 const commentsTOC = comments => {
     if (comments) {
         return `
@@ -60,6 +67,7 @@ const commentsTOC = comments => {
     } else return ``;
 }
 
+// add comment section if user inputs anything for it
 const commentSection = comments => {
     if (comments) {
 return `
@@ -70,6 +78,7 @@ ${comments}
     }
 }
 
+// exposts this generator
 module.exports = answers => {
 
 const { name, email, github, repoName, title, description, languages, 
