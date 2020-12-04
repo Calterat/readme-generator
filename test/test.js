@@ -1,8 +1,10 @@
+const expect = require('chai').expect;
+const { validateUser } = require('./validations');
 const fetch = require('node-fetch');
 
-const validateUser = (user, result) => {
-    return new Promise(() => {
-        fetch(`https://api.github.com/users/${user}`)
+describe('validateUser()', function() {
+    it('should fetch data from GitHub API', function () {
+        fetch(`https://api.github.com/users/Calterat`)
             .then(response => {
                 if (response.ok) {
                     result(true);
@@ -13,6 +15,4 @@ const validateUser = (user, result) => {
                 }
             })
     })
-}
-
-module.exports = { validateUser };
+})
