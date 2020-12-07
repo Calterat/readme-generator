@@ -158,7 +158,7 @@ ${testingSection(tests)}
 
 ## License
 
-This project is covered under the license of [${license}](https://${gitType}.com/${gitUser}/${repoName}/main/LICENSE)
+This project is covered under the license of [${license}](https://${gitType}.com/${gitUser}/${repoName}/blob/main/LICENSE.txt)
 
 
 ## Questions
