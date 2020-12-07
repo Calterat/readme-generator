@@ -9,7 +9,7 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'name',
-            message: 'What is your name?'
+            message: "What is your name or pass by hitting 'ENTER'?"
         },
         {
             type: 'input',
@@ -18,14 +18,42 @@ const readmeQuestions = () => {
             validate: input => {
                 if (input) return true;
                 else {
-                    console.log('You must provide your E-mail address!')
+                    console.log('You must provide your E-mail address!');
+                    return false;
                 }
             }
         },
         {
+            type: 'list',
+            name: 'gitType',
+            message: 'Are you using GitLab or GitHub?',
+            choices: ['GitLab','GitHub']
+        },
+        {
             type: 'input',
-            name: 'github',
+            name: 'gitUser',
+            message: 'What is your GitLab username?',
+            when: ({gitType}) => {
+                if (gitType === 'GitLab') return true;
+                else return false;
+            },
+            validate: input => {
+                if (input) return true;
+                else {
+                    console.log('Please enter your GitLab Username!');
+                    return false;
+                }
+            }
+
+        },
+        {
+            type: 'input',
+            name: 'gitUser',
             message: 'What is your GitHub username (Hint: must be a valid github username)?',
+            when: ({gitType}) => {
+                if (gitType === 'GitHub') return true;
+                else return false;
+            },
             validate: function(input) {
 
                 const validateUser = (user, result) => {
@@ -63,14 +91,7 @@ const readmeQuestions = () => {
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your project?',
-            validate: input => {
-                if (input) return true;
-                else {
-                    console.log('Please input the title of your project! Come on... It must be called something!');
-                    return false;
-                }
-            }
+            message: "If different than your repo name, What is the title of your project? (press 'Enter' if same)"
         },
         {
             type: 'input',
@@ -153,15 +174,9 @@ const readmeQuestions = () => {
             message: 'What is needed to run tests on the project?'
         },
         {
-            type: 'list',
-            name: 'git',
-            message: 'Are you using GitLab or GitHub?',
-            choices: ['GitLab','GitHub']
-        },
-        {
             type: 'input',
             name: 'repoSiteURL',
-            message: 'If there is a webURL for this enter here, or else just hit ENTER'
+            message: 'If there is a webURL for this project enter here, or else just hit ENTER'
         },
         {
             type: 'input',

@@ -4,9 +4,9 @@ const testingSection = test => {
 return `
 ## Tests
 
-${test}
+> ${test}
 `
-    }
+    } else return ``;
 }
 
 // This add the Test TOC item if the user inputs a test section
@@ -48,13 +48,13 @@ const usageAdd = (addOn, screenshotPath, videoLink) => {
             return ``;
             break;
         case 'Screenshot':
-            return `![Screenshot](${screenshotPath})`
+            return `* ![Screenshot](${screenshotPath})`
             break;
         case 'Video':
-            return `[Here is a HowTo Video Link!](${videoLink})`
+            return `* [Here is a HowTo Video Link!](${videoLink})`
             break;
         default:
-            return `Error in the Switch!`;
+            return `Error finding link`;
     }
     
 }
@@ -73,22 +73,47 @@ const commentSection = comments => {
 return `
 ## Comments
 
-${comments}
+> ${comments}
 `
-    }
+    } else return ``;
 }
+
+// adds a contribute TOC if the user inputs anything
+const contributeTOC = comments => {
+    if (comments) {
+        return `
+* [Contributing](#contributing)`;
+    } else return ``;
+}
+
+// add contribute section if user inputs anything for it
+const contributeSection = contribute => {
+    if (contribute) {
+return `
+## Contributing
+
+> ${contribute}
+`
+    } else return ``;
+}
+
+const repoNameOrTitle = (repoName, title) => {
+    if (title) return `${title}`
+    else return `${repoName}`
+}
+
 
 // exposts this generator
 module.exports = answers => {
 
-const { name, email, github, repoName, title, description, languages, 
+const { name, email, gitType, gitUser, repoName, title, description, languages, 
     license, installation, usageContent, usageAddOn, screenshotPath, videoLink, 
-    tests, git, repoSiteURL, contribute, comments } = answers;
+    tests, repoSiteURL, contribute, comments } = answers;
 
 return `
-[![GitHub license](https://img.shields.io/badge/License-${license.replace(/ /g, '%20')}-${licenseYesNo(license)}.svg)](https://${git}.com/${github}/${repoName}/main/LICENSE)
+[![${gitType} license](https://img.shields.io/badge/License-${license.replace(/ /g, '%20')}-${licenseYesNo(license)}.svg)](https://${gitType}.com/${gitUser}/${repoName}/main/LICENSE)
 
-# ${title}
+# ${repoNameOrTitle(repoName, title)}
 
 ${nameSentence(name)} Welcome to my ${title} node app.
 
@@ -102,8 +127,7 @@ ${description}
 
 * [Languages](#languages)
 * [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)${testingTOC(tests)}
+* [Usage](#usage)${contributeTOC(contribute)}${testingTOC(tests)}
 * [License](#license)
 * [Questions](#questions)${commentsTOC(comments)}
 
@@ -121,14 +145,12 @@ ${languages}
 
 ## Usage
 
-${usageContent}
+> ${usageContent}
 
-> ${usageAdd(usageAddOn, screenshotPath, videoLink)}
+${usageAdd(usageAddOn, screenshotPath, videoLink)}
 
 
-## Contributing
-
-${contribute}    
+${contributeSection(contribute)} 
 
 
 ${testingSection(tests)}
@@ -136,12 +158,12 @@ ${testingSection(tests)}
 
 ## License
 
-This project is covered under the license of [${license}](https://${git}.com/${github}/${repoName}/main/LICENSE)
+This project is covered under the license of [${license}](https://${gitType}.com/${gitUser}/${repoName}/main/LICENSE)
 
 
 ## Questions
 
-You can find my repository URL [Here](https://${git}.com/${github})
+You can find my repository URL [Here](https://${gitType}.com/${gitUser})
 
 ${siteURL(repoSiteURL)}
 
