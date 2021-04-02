@@ -42,21 +42,15 @@ const licenseYesNo = license => {
 }
 
 // checks what type of usage addon the user selects and puts it in the README
-const usageAdd = (addOn, screenshotPath, videoLink) => {
-    switch (addOn) {
-        case 'None':
-            return ``;
-            break;
-        case 'Screenshot':
-            return `* ![Screenshot](${screenshotPath})`
-            break;
-        case 'Video':
-            return `* [Here is a HowTo Video Link!](${videoLink})`
-            break;
-        default:
-            return `Error finding link`;
+const usageAdd = (screenshot, videoLink) => {
+    if (screenshot && videoLink) {
+        return`
+        * ![Screenshot](${screenshot})
+        * [Here is a HowTo Video Link!](${videoLink})
+        `
     }
-    
+    if (screenshot) return `* ![Screenshot](${screenshot})`
+    if (videoLink) return `* [Here is a HowTo Video Link!](${videoLink})`
 }
 
 // adds a comment TOC if the user inputs anything
@@ -147,7 +141,7 @@ ${languages}
 
 > ${usageContent}
 
-${usageAdd(usageAddOn, screenshotPath, videoLink)}
+${usageAdd(screenshotPath, videoLink)}
 
 
 ${contributeSection(contribute)} 

@@ -146,25 +146,31 @@ const readmeQuestions = () => {
         },
         {
             type: 'list',
-            name: 'usageAddOn',
-            message: 'Do you have a video link or screenshot link to add to to your README?',
-            choices: ['None', 'Screenshot', 'Video']
+            name: 'usageAddImg',
+            message: 'Do you have a screenshot link to add to to your README?',
+            choices: ['Yes', 'No']
         },
         {
             type: 'input',
             name: 'screenshotPath',
             message: 'What is the relative path of the screenshot image to where this README will sit?',
-            when: ({usageAddOn}) => {
-                if (usageAddOn === 'Screenshot') return true;
+            when: ({usageAddImg}) => {
+                if (usageAddImg === 'Yes') return true;
                 else return false;
             }
+        },
+        {
+            type: 'list',
+            name: 'usageAddVideo',
+            message: 'Do you have a video link to add to to your README?',
+            choices: ['Yes', 'No']
         },
         {
             type: 'input',
             name: 'videoLink',
             message: 'What is the URL of the video link?',
-            when: ({usageAddOn}) => {
-                if (usageAddOn === 'Video') return true;
+            when: ({usageAddVideo}) => {
+                if (usageAddVideo === 'Yes') return true;
                 else return false;
             }
         },
